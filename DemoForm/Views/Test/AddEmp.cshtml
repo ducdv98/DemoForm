@@ -43,7 +43,7 @@
 
 
     }*@
-<form method="post" action="@Url.Action("AddEmp", "Test")">
+@*<form method="post" action="@Url.Action("AddEmp", "Test")">
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
@@ -75,7 +75,38 @@
             <input type="submit" value="Add" class="btn btn-default" />
         </div>
     </div>
+</form>*@
+
+@*Cái chỗ action em không biết dùng thế đúng không, tại cái này chỉnh lại cái route là sai ngay.
+    Chỗ này dùng @url.action là hợp lí mà giờ dùng html thuần thì không dùng được rồi -.-*@
+<form action="/test/addemp/" method="post">
+    <div class="form-group">
+        <label class="control-label col-md-2">Name</label>
+        <div class="col-md-10">
+            <input type="text" name="Name" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Phone number</label>
+        <div class="col-md-10">
+            <input type="text" name="PhoneNumber" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Address</label>
+        <div class="col-md-10">
+            <input type="text" name="Address" class="form-control" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-default"/>
+    </div>
+
 </form>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
